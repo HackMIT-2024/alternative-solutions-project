@@ -1,6 +1,7 @@
 'use client';
 
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
 import SearchBar from "./components/SearchBar"
 
