@@ -1,5 +1,7 @@
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import Image from "next/image";
 import styles from "./page.module.css";
+// import { ProductCard } from "./components/ProductCard";
 
 export default function Home() {
   return (
