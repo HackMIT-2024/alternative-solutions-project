@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
+import { useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
 
 export default function Home() {
+  const { user } = useUser();
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -45,6 +50,7 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+        {user && <p>Hello {user.fullName}!</p>}
       </main>
       <footer className={styles.footer}>
         <a
