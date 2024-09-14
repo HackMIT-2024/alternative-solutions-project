@@ -1,8 +1,10 @@
 "use client";
 
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import Image from "next/image";
 import { useUser } from "@clerk/nextjs";
 import styles from "./page.module.css";
+// import { ProductCard } from "./components/ProductCard";
 
 export default function Home() {
   const { user } = useUser();
