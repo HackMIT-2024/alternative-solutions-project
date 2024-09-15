@@ -14,14 +14,18 @@ const products = defineTable({
   description: v.string(),
   price: v.number(),
   rating: v.number(),
-  businessId: v.id("businesses")
+  businessId: v.id("businesses"),
+  embedding: v.array(v.float64()),
+}).vectorIndex("by_embedding", {
+  vectorField: "embedding",
+  dimensions: 1536,
 });
 
 const users = defineTable({
   name: v.string(),
   // this the Clerk ID, stored in the subject JWT field
   externalId: v.string(),
-  isAdmin: v.boolean()
+  isAdmin: v.boolean(),
 }).index("byExternalId", ["externalId"]);
 
 export default defineSchema({

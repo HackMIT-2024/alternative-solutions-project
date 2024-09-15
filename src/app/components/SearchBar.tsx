@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useState } from 'react';
 import styles from '../styles/SearchBar.module.css'
@@ -9,7 +9,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 library.add(faSearch)
 
 const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -37,4 +37,3 @@ const SearchBar = ({ onSearch }) => {
 };
 
 export default SearchBar;
-
