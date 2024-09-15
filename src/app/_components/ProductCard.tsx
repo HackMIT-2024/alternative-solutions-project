@@ -2,6 +2,7 @@
 // https://mdbootstrap.com/docs/react/extended/product-cards/
 
 import React, { useCallback } from "react";
+import { usePathname } from "next/navigation";
 import {
   MDBCard,
   MDBCardBody,
@@ -16,6 +17,7 @@ import { api } from "../../../convex/_generated/api";
 import styles from "../_styles/ProductCard.module.css";
 
 export interface ProductCardProps {
+  name: string;
   productId: string;
   imageSrc: string;
   brand: string;
@@ -26,6 +28,7 @@ export interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  name,
   productId,
   imageSrc,
   brand,
@@ -35,14 +38,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
   rating,
 }) => {
   const addToWishlist = useAction(api.users.upsertWishlist);
-
+  const removeFromWishlist = useAction(api.users.removeWishlistItem);
   const { _id: userId, wishlist } = useQuery(api.users.current) || {
     _id: "",
     wishlist: [],
   };
+  const pathname = usePathname();
 
-  const handleWishlist = async () => {
+  const handleAddToWishlist = async () => {
     await addToWishlist({ productId, userId });
+  };
+
+  const handleRemoveFromWishlist = async () => {
+    await removeFromWishlist({ productId, userId });
   };
 
   const inWishlist = useCallback(
@@ -72,7 +80,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <h5
               className={`${styles.align_left} mb-0 text-dark ${styles.four_lines}`}
             >
-              {description}
+              {name}
             </h5>
             <div className={`${styles.align_right}`}>
               <h5 className="text-dark mb-0">${price}</h5>
@@ -82,36 +90,50 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
           <div className="d-flex flex-column justify-content-between mb-2">
             <div className="d-flex flex-row">
-              {inWishlist() ? (
-                <MDBCardText
-                  className={`${styles.card_buttons_text} ms-1 text-center mb-0 px-2`}
-                >
-                  item in wishlist
-                </MDBCardText>
+              {pathname !== "/wishlist" ? (
+                inWishlist() ? (
+                  <MDBCardText
+                    className={`${styles.card_buttons_text} ms-1 text-center mb-0`}
+                  >
+                    ITEM IN WISHLIST
+                  </MDBCardText>
+                ) : (
+                  <>
+                    <SignedIn>
+                      <MDBBtn
+                        outline
+                        size="sm"
+                        color="secondary"
+                        rippleColor="dark"
+                        className={`${styles.card_buttons} ms-1`}
+                        onClick={handleAddToWishlist}
+                      >
+                        ADD TO WISHLIST
+                      </MDBBtn>
+                    </SignedIn>
+                    <SignedOut>
+                      <MDBBtn
+                        color="link"
+                        className={`${styles.card_buttons} ms-1`}
+                        tag="a"
+                        href="https://sharing-insect-70.accounts.dev/sign-in"
+                      >
+                        SIGN IN FOR WISHLIST
+                      </MDBBtn>
+                    </SignedOut>
+                  </>
+                )
               ) : (
-                <>
-                  <SignedIn>
-                    <MDBBtn outline
-                      size="sm"
-                      color="secondary"
-                      rippleColor="dark"
-                      className={`${styles.card_buttons} ms-1`}
-                      onClick={handleWishlist}
-                    >
-                      add to wishlist
-                    </MDBBtn>
-                  </SignedIn>
-                  <SignedOut>
-                    <MDBBtn
-                      color="link"
-                      className={`${styles.card_buttons} ms-1`}
-                      tag="a"
-                      href="https://sharing-insect-70.accounts.dev/sign-in"
-                    >
-                      SIGN IN FOR WISHLIST
-                    </MDBBtn>
-                  </SignedOut>
-                </>
+                <MDBBtn
+                  outline
+                  size="sm"
+                  color="danger"
+                  rippleColor="dark"
+                  className={`${styles.card_buttons} ms-1`}
+                  onClick={handleRemoveFromWishlist}
+                >
+                  Remove Item
+                </MDBBtn>
               )}
 
               <MDBBtn

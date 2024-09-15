@@ -13,7 +13,7 @@ const WishlistButton = () => {
   const wishlistIcon = wishlist.length ? faHeartSolid : faHeartOutline;
 
   return (
-    <a href="">
+    <a href="/wishlist">
       <FontAwesomeIcon size="2x" icon={wishlistIcon} color="#AEC09A" />
     </a>
   );

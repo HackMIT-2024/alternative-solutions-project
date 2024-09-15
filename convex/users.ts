@@ -99,9 +99,32 @@ export const upsertWishlist = action({
     productId: v.id("products"),
   },
   handler: async (ctx, { userId, productId }) => {
-    let wishlist = await ctx.runQuery(internal.users.getWishList, { userId });
+    const wishlist = await ctx.runQuery(internal.users.getWishList, { userId });
 
     wishlist?.push(productId);
+
+    await ctx.runMutation(internal.users.updateWishlist, {
+      userId,
+      wishlist,
+    });
+  },
+});
+
+export const removeWishlistItem = action({
+  args: {
+    userId: v.id("users"),
+    productId: v.id("products"),
+  },
+  handler: async (ctx, { userId, productId }) => {
+    const wishlist = await ctx.runQuery(internal.users.getWishList, { userId });
+
+    const wishlistIndex = wishlist?.findIndex(
+      (product) => product == productId
+    );
+
+    if (wishlistIndex !== -1) {
+      wishlist?.splice(wishlistIndex, 1);
+    }
 
     await ctx.runMutation(internal.users.updateWishlist, {
       userId,

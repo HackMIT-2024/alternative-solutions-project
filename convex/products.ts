@@ -38,6 +38,7 @@ export const fetchResults = internalQuery({
       }
 
       const product: ProductCardProps = {
+        name: doc.name,
         productId: doc._id,
         imageSrc: doc.imageSrc,
         brand: doc.brand,
@@ -54,10 +55,12 @@ export const fetchResults = internalQuery({
 });
 
 export const fetchProductsFromWishlist = action({
-  args: { wishlist: v.array(v.id('products')) },
+  args: { wishlist: v.array(v.id("products")) },
   handler: async (ctx, args): Promise<Array<ProductCardProps>> => {
-    return await ctx.runQuery(internal.products.fetchResults, {ids: args.wishlist});
-  }
+    return await ctx.runQuery(internal.products.fetchResults, {
+      ids: args.wishlist,
+    });
+  },
 });
 
 export const insertProduct = internalMutation({
@@ -117,7 +120,7 @@ export const similarProducts = action({
     });
     // ...
     const products: Array<ProductCardProps> = await ctx.runQuery(
-    internal.products.fetchResults,
+      internal.products.fetchResults,
       { ids: results.map((result) => result._id) }
     );
     return products;
