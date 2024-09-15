@@ -18,10 +18,6 @@ export default function Home() {
   const { isAdmin } = useQuery(api.users.current) || { isAdmin: false };
   const [products, setProducts] = useState<ProductCardRowProps[]>([]);
 
-  setTimeout(() => {
-    document.getElementById('targetScroll')?.scrollIntoView({ behavior: 'smooth' });
-  }, 0);
-
   return (
     <div className={styles.page}>
       <main className={styles.main}>

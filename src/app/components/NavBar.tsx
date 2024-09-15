@@ -43,12 +43,12 @@ const NavBar = () => {
         }}>
         sustain.
       </MDBNavbarBrand>
-            <SignedOut>
-            <SignInButton><button className={styles.button}>sign in</button></SignInButton>
-            </SignedOut>
-            <SignedIn>
-            <div style={{ paddingTop: "10px", marginRight:"25px"}}><UserButton/></div>
-            </SignedIn>
+          <SignedOut>
+          <SignInButton><button className={styles.button}>sign in</button></SignInButton>
+          </SignedOut>
+          <SignedIn>
+          <div style={{ paddingTop: "10px", marginRight:"25px"}}><UserButton/></div>
+          </SignedIn>
       </MDBContainer>
       </MDBNavbar>
   );
