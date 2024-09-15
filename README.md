@@ -2,6 +2,10 @@
 
 We are a user-friendly full-stack web application that allows for people aware and concerned with personal sustainability practices to have access to brands dedicated to sustainability through browsing options that are similar to their product needs.
 
+Visit us at https://shopsustain.com!
+
+## Project Information
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
