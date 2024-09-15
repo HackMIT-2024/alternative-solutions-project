@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
 
@@ -34,7 +34,7 @@ export default function Home() {
             <section className={styles.launchSection}>
                 <LaunchPage setProducts={setProducts} />
             </section>
-            <section className={styles.gridSection} id="targetScroll">
+            <section className={styles.gridSection}>
               <ProductCardGrid product_rows={products}/>
             </section>
           </>

@@ -12,14 +12,14 @@ import styles from "../_styles/Module.module.css";
 
 library.add(faPagelines, faCartShopping);
 
-const LaunchPage = ({ setProducts, handleScroll }) => {
+const LaunchPage = ({ setProducts }) => {
   return (
     <>
       <MDBRow style={{ marginTop: "20px" }}>
         <MDBCol md="8">
           <LaunchTitle />
           <br />
-          <SearchBar setProducts={setProducts} handleScroll={handleScroll} />
+          <SearchBar setProducts={setProducts} />
         </MDBCol>
         <MDBCol md="4">
           <FontAwesomeIcon

@@ -53,10 +53,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <div className="d-flex justify-content-between mb-2">
                 <div className="d-flex flex-row">
                     <MDBBtn size="sm" rippleColor="light" style={{ backgroundColor: '#344C11', color: '#fff' }} className="flex-fill ms-1">
-                    Add to wishlist
+                    add to wishlist
                     </MDBBtn>
                     <MDBBtn size="sm" style={{ backgroundColor: '#AEC09A', color: '#1A2902' }} className="flex-fill ms-2" href={url} target="_blank">
-                    View product
+                    view product
                     </MDBBtn>
                 </div>
             </div>

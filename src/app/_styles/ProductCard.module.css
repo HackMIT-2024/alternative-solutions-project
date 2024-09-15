@@ -27,6 +27,7 @@
   --mdb-btn-padding-x: auto;
   --mdb-btn-font-size: 0.75rem;
   --mdb-btn-line-height: 1.5;
+  text-transform: lowercase;
 }
 
 .card_buttons_text {

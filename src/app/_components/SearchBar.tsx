@@ -11,7 +11,7 @@ import styles from "../_styles/SearchBar.module.css";
 
 library.add(faSearch);
 
-const SearchBar = ({ setProducts, handleScroll }) => {
+const SearchBar = ({ setProducts }) => {
   const findSimilarProducts = useAction(api.products.similarProducts);
   const [query, setQuery] = useState("");
 
@@ -20,7 +20,6 @@ const SearchBar = ({ setProducts, handleScroll }) => {
   };
 
   const handleSubmit = async (event) => {
-    handleScroll();
     event.preventDefault();
     const similarProducts = await findSimilarProducts({
       descriptionQuery: query,

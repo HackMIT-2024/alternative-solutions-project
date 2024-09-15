@@ -84,9 +84,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <div className="d-flex flex-row">
               {inWishlist() ? (
                 <MDBCardText
-                  className={`${styles.card_buttons_text} ms-1 text-center mb-0`}
+                  className={`${styles.card_buttons_text} ms-1 text-center mb-0 px-2`}
                 >
-                  ITEM IN WISHLIST
+                  item in wishlist
                 </MDBCardText>
               ) : (
                 <>
@@ -98,7 +98,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                       className={`${styles.card_buttons} ms-1`}
                       onClick={handleWishlist}
                     >
-                      ADD TO WISHLIST
+                      add to wishlist
                     </MDBBtn>
                   </SignedIn>
                   <SignedOut>
@@ -116,11 +116,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
               <MDBBtn
                 color="light"
-                className={`${styles.card_buttons} ms-2`}
+                className={`${styles.card_buttons} ms-2 px-1`}
                 href={url}
                 target="_blank"
               >
-                VIEW PRODUCT
+                view product
               </MDBBtn>
             </div>
           </div>
