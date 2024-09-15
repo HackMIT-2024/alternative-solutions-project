@@ -1,69 +1,132 @@
 // Modified from MD Bootstrap website
 // https://mdbootstrap.com/docs/react/extended/product-cards/
 
-import React from "react";
+import React, { useCallback } from "react";
 import {
   MDBCard,
   MDBCardBody,
   MDBCardImage,
   MDBBtn,
+  MDBCardText,
 } from "mdb-react-ui-kit";
-import styles from '../styles/ProductCard.module.css';
+import styles from "../styles/ProductCard.module.css";
+import { api } from "../../../convex/_generated/api";
+import { useAction, useQuery } from "convex/react";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 
 export interface ProductCardProps {
-    imageSrc: string;
-    brand: string;
-    url: string;
-    description: string;
-    price: string;
-    rating: string;
-  }
+  productId: string;
+  imageSrc: string;
+  brand: string;
+  url: string;
+  description: string;
+  price: number;
+  rating: number;
+}
 
 const ProductCard: React.FC<ProductCardProps> = ({
-    imageSrc,
-    brand,
-    url,
-    description,
-    price,
-    rating,
+  productId,
+  imageSrc,
+  brand,
+  url,
+  description,
+  price,
+  rating,
 }) => {
+  const addToWishlist = useAction(api.users.upsertWishlist);
+
+  const { _id: userId, wishlist } = useQuery(api.users.current) || {
+    _id: "",
+    wishlist: [],
+  };
+
+  const handleWishlist = async () => {
+    await addToWishlist({ productId, userId });
+  };
+
+  const inWishlist = useCallback(
+    () => wishlist.includes(productId),
+    [wishlist, productId]
+  );
+
   return (
-    <MDBCard className={`${styles.product_card} d-flex flex-column ${styles.col} ${styles.mb_4}`}>
-        <div className={`border border-5 border-white ${styles.card} ${styles.h_100}`}>
-        
+    <MDBCard
+      className={`${styles.product_card} d-flex flex-column ${styles.col} ${styles.mb_4}`}
+    >
+      <div
+        className={`border border-5 border-white ${styles.card} ${styles.h_100}`}
+      >
         <MDBCardImage
-            src={imageSrc}
-            position="top"
-            alt={description}
-            className={ styles.product_card_image }
+          src={imageSrc}
+          position="top"
+          alt={description}
+          className={styles.product_card_image}
         />
-        <MDBCardBody className={`flex-grow-1 d-flex flex-column ${styles.p_4} `}>
-            <div className="d-flex justify-content-between">
+        <MDBCardBody className={`flex-grow-1 d-flex flex-column ${styles.p_4}`}>
+          <div className="d-flex justify-content-between">
             <p className="small text-muted">{brand}</p>
-            </div>
+          </div>
 
-            <div className="d-flex justify-content-between mb-3">
-            <h5 className={`${styles.align_left} mb-0 text-dark ${styles.four_lines}`}>{description}</h5>
+          <div className="d-flex justify-content-between mb-3">
+            <h5
+              className={`${styles.align_left} mb-0 text-dark ${styles.four_lines}`}
+            >
+              {description}
+            </h5>
             <div className={`${styles.align_right}`}>
-                <h5 className="text-dark mb-0">${price}</h5>
-                <h6 className="text-muted mb-0 small">{rating}/5 stars</h6>
+              <h5 className="text-dark mb-0">${price}</h5>
+              <h6 className="text-muted mb-0 small">{rating}/5 stars</h6>
             </div>
-            </div>
+          </div>
 
-            <div className="d-flex justify-content-between mb-2">
-                <div className="d-flex flex-row">
-                    <MDBBtn size="sm" color="primary" rippleColor="dark" className="flex-fill ms-1">
-                    Add to wishlist
+          <div className="d-flex flex-column justify-content-between mb-2">
+            <div className="d-flex flex-row">
+              {inWishlist() ? (
+                <MDBCardText
+                  className={`${styles.card_buttons_text} ms-1 text-center mb-0`}
+                >
+                  ITEM IN WISHLIST
+                </MDBCardText>
+              ) : (
+                <>
+                  <SignedIn>
+                    <MDBBtn
+                      size="sm"
+                      color="primary"
+                      rippleColor="dark"
+                      className={`${styles.card_buttons} ms-1`}
+                      onClick={handleWishlist}
+                    >
+                      ADD TO WISHLIST
                     </MDBBtn>
-                    <MDBBtn size="sm" color="secondary" className="flex-fill ms-2" href={url} target="_blank">
-                    View product
+                  </SignedIn>
+                  <SignedOut>
+                    <MDBBtn
+                      color="link"
+                      className={`${styles.card_buttons} ms-1`}
+                      tag="a"
+                      href="https://sharing-insect-70.accounts.dev/sign-in"
+                    >
+                      SIGN IN FOR WISHLIST
                     </MDBBtn>
-                </div>
+                  </SignedOut>
+                </>
+              )}
+
+              <MDBBtn
+                color="secondary"
+                className={`${styles.card_buttons} ms-2`}
+                href={url}
+                target="_blank"
+              >
+                VIEW PRODUCT
+              </MDBBtn>
             </div>
+          </div>
         </MDBCardBody>
-        </div>
+      </div>
     </MDBCard>
   );
-}
+};
 
 export default ProductCard;

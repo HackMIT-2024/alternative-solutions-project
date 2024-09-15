@@ -1,16 +1,29 @@
+.navbar {
+  --mdb-navbar-padding-x: 4rem !important;
+  background-color: "#1A2902";
+}
+
+.user_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: 1px solid gray; 
-    background-color: transparent;
-    color: gray; 
-    border-radius: 4px;
-    margin-left: 10px;
-    margin-right: 20px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #AEC09A; 
-    color: #344C11; 
-  }
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid gray;
+  background-color: transparent;
+  color: gray;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #aec09a;
+  color: #344c11;
+}

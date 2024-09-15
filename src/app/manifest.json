@@ -1,0 +1,16 @@
+{
+  "name": "Sustain.",
+  "short_name": "Sustain",
+  "description": "Next.js App",
+  "start_url": "/src/app",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "/src/app/favicon-new.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
