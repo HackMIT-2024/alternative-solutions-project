@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import styles from './SearchBar.module.css'; 
+import React, { useState } from "react";
+import styles from "./SearchBar.module.css";
 
 const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
     setQuery(event.target.value);
@@ -24,10 +24,11 @@ const SearchBar = ({ onSearch }) => {
         placeholder="Enter product keywords"
         className={styles.input}
       />
-      <button type="submit" className={styles.button}>Go</button>
+      <button type="submit" className={styles.button}>
+        Go
+      </button>
     </form>
   );
 };
 
 export default SearchBar;
-
