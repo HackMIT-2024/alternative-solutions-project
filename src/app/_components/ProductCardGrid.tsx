@@ -10,7 +10,6 @@ export interface ProductCardGridProps {
 }
 
 const ProductCardGrid: React.FC<ProductCardGridProps> = ({ product_rows }) => {
-  console.log("product_rows", product_rows)
   return (
     <MDBContainer
       fluid

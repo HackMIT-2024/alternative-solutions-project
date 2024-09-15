@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { UserButton, SignedOut, SignInButton, SignedIn } from "@clerk/nextjs";
 import { MDBNavbar, MDBContainer, MDBNavbarBrand } from "mdb-react-ui-kit";
 
@@ -11,7 +11,7 @@ import { isUserLoaded } from "../_hooks/isUserLoaded";
 const NavBar = () => {
   const isLoading = isUserLoaded();
   const [letterSpacing, setLetterSpacing] = useState("3px");
-  const [opacity, setOpacity] = useState(0);
+  const [opacity, setOpacity] = useState(0.3);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,10 +23,10 @@ const NavBar = () => {
       setLetterSpacing(newLetterSpacing);
       setOpacity(newOpacity);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -35,18 +35,21 @@ const NavBar = () => {
       {!isLoading && (
         <MDBNavbar fixed="top" className={styles.navbar}>
           <MDBContainer fluid>
-          <MDBNavbarBrand
-            style={{
-              color: "#AEC09A",
-              fontSize: "20px",
-              fontWeight: "bold",
-              fontFamily: "monospace",
-              letterSpacing: letterSpacing,
-              opacity: opacity,
-              transition: "letter-spacing 0.2s ease, opacity 0.2s ease"
-            }}>
-            sustain.
-          </MDBNavbarBrand>
+            <a href="/" style={{ textDecoration: "none" }}>
+              <MDBNavbarBrand
+                style={{
+                  color: "#AEC09A",
+                  fontSize: "25px",
+                  fontWeight: "bold",
+                  fontFamily: "monospace",
+                  letterSpacing: letterSpacing,
+                  opacity: opacity,
+                  transition: "letter-spacing 0.2s ease, opacity 0.2s ease",
+                }}
+              >
+                sustain.
+              </MDBNavbarBrand>
+            </a>
             <SignedOut>
               <SignInButton>
                 <button className={styles.button}>sign in</button>
@@ -54,7 +57,7 @@ const NavBar = () => {
             </SignedOut>
             <SignedIn>
               <div className={styles.user_buttons}>
-                <WishlistButton/>
+                <WishlistButton />
                 <UserButton />
               </div>
             </SignedIn>

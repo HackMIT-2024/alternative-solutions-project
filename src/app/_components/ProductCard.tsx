@@ -83,7 +83,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
               {name}
             </h5>
             <div className={`${styles.align_right}`}>
-              <h5 className="text-dark mb-0">${price}</h5>
+              <h5 className="text-dark mb-0">
+                ${parseFloat(price.toString()).toFixed(2)}
+              </h5>
               <h6 className="text-muted mb-0 small">{rating}/5 stars</h6>
             </div>
           </div>
@@ -92,11 +94,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <div className="d-flex flex-row">
               {pathname !== "/wishlist" ? (
                 inWishlist() ? (
-                  <MDBCardText
-                    className={`${styles.card_buttons_text} ms-1 text-center mb-0`}
+                  <MDBBtn
+                    outline
+                    size="sm"
+                    color="danger"
+                    rippleColor="dark"
+                    className={`${styles.card_buttons} ms-1`}
+                    onClick={handleRemoveFromWishlist}
                   >
-                    item in wishlist
-                  </MDBCardText>
+                    remove item
+                  </MDBBtn>
                 ) : (
                   <>
                     <SignedIn>
@@ -132,7 +139,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                   className={`${styles.card_buttons} ms-1`}
                   onClick={handleRemoveFromWishlist}
                 >
-                  Remove Item
+                  remove item
                 </MDBBtn>
               )}
 
