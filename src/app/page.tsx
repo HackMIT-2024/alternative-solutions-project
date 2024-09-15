@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./page.module.css";
-import styles2 from "../styles/SearchBar.module.css";
 import ProductCardGrid from "./components/ProductCardGrid";
 import LaunchPage from "./components/LaunchPage";
 import { useState, useRef } from "react";
