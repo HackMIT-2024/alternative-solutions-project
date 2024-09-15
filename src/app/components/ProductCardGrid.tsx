@@ -8,7 +8,7 @@ export interface ProductCardGridProps {
 
 const ProductCardGrid: React.FC<ProductCardGridProps> = ({ product_rows }) => {
   return (
-    <MDBContainer fluid className="my-5">
+    <MDBContainer fluid className="my-5 container px-4 px-lg-5 mt-5">
       {product_rows.map((row, index) => (
           <ProductCardRow key={index} {...row} />
       ))}

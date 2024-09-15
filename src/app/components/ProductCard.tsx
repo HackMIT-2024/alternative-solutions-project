@@ -28,8 +28,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
     rating,
 }) => {
   return (
-    <MDBCard className="product-card d-flex flex-column">
-        <div className="border border-5 border-white">
+    <MDBCard className="product-card d-flex flex-column col mb-4">
+        <div className="border border-5 border-white card h-100">
         
         <MDBCardImage
             src={imageSrc}
@@ -37,15 +37,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
             alt={description}
             className="product-card-image"
         />
-        <MDBCardBody className="product-card-body flex-grow-1 d-flex flex-column">
+        <MDBCardBody className="product-card-body card-body flex-grow-1 d-flex flex-column p-4">
             <div className="d-flex justify-content-between">
-            <p className="small">
+            <p className="small text-muted">
                 {brand}
             </p>
             </div>
 
             <div className="d-flex justify-content-between mb-3">
-            <h5 className="align-left mb-0">{description}</h5>
+            <h5 className="align-left mb-0 text-dark">{description}</h5>
             <div className="align-right">
                 <h5 className="text-dark mb-0">${price}</h5>
                 <h6 className="text-muted mb-0 small">{rating}/5 stars</h6>
