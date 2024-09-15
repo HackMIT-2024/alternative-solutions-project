@@ -106,7 +106,7 @@ export const similarProducts = action({
     // 2. Then search for similar foods!
     const results = await ctx.vectorSearch("products", "by_embedding", {
       vector: embedding,
-      limit: 16,
+      limit: 4,
     });
     // ...
     const products: Array<ProductCardProps> = await ctx.runQuery(

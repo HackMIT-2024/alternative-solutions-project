@@ -1,8 +1,5 @@
-"use client";
-
 import localFont from "next/font/local";
 import ConvexClientProvider from "./ConvexClientProvider";
-import { MDBContainer } from "mdb-react-ui-kit";
 import NavBar from "./components/NavBar";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "./globals.css";
@@ -26,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon-new.ico" sizes="any" />
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ConvexClientProvider>
           <NavBar isLoading />

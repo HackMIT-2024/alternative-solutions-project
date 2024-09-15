@@ -35,6 +35,11 @@ a {
   text-decoration: none;
 }
 
+.cl-avatarBox {
+  width: 2rem;
+  height: 2rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
