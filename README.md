@@ -1,3 +1,7 @@
+## Welcome to sustain!
+
+We are a user-friendly full-stack web application that allows for people aware and concerned with personal sustainability practices to have access to brands dedicated to sustainability through browsing options that are similar to their product needs.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -27,6 +31,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+Allow pop-ups to open your wishlist in one click.
 
 ## Learn More
 
