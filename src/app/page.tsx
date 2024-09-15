@@ -1,9 +1,8 @@
 'use client';
 
 import styles from "./page.module.css";
-import SearchBar from "./components/SearchBar";
 import ProductCardGrid from "./components/ProductCardGrid";
-import LaunchTitle from "./components/LaunchTitle";
+import LaunchPage from "./components/LaunchPage";
 
 export default function Home() {
   const handleSearch = (query: unknown) => {
@@ -49,9 +48,7 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-      <LaunchTitle/>
-      <SearchBar onSearch={ handleSearch } ></SearchBar>
-
+      <LaunchPage onSearch={handleSearch}></LaunchPage>
       <ProductCardGrid product_rows={product_rows}/>
       </main>
       <footer className={styles.footer}></footer>
