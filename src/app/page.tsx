@@ -1,19 +1,22 @@
 "use client";
 
-import styles from "./page.module.css";
-import ProductCardGrid from "./components/ProductCardGrid";
-import LaunchPage from "./components/LaunchPage";
-import { useState, useRef } from "react";
-import { isUserLoaded } from "./hooks/isUserLoaded";
+import React, { useState, useRef } from "react";
 import { useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import BrandForm from "./components/admin/BrandForm";
-import ProductForm from "./components/admin/ProductForm";
+
+import ProductCardGrid from "./_components/ProductCardGrid";
+import LaunchPage from "./_components/LaunchPage";
+import { isUserLoaded } from "./_hooks/isUserLoaded";
+import BrandForm from "./_components/admin/BrandForm";
+import ProductForm from "./_components/admin/ProductForm";
+import { ProductCardRowProps } from "./_components/ProductCardRow";
+
+import styles from "./page.module.css";
 
 export default function Home() {
-  const [similarProducts, setSimilarProducts] = useState<unknown>([]);
   const isLoading = isUserLoaded();
   const { isAdmin } = useQuery(api.users.current) || { isAdmin: false };
+  const [products, setProducts] = useState<ProductCardRowProps[]>([]);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
@@ -39,10 +42,10 @@ export default function Home() {
               </>
             )}
             <LaunchPage
-              setProducts={setSimilarProducts}
+              setProducts={setProducts}
               handleScroll={handleScroll}
             ></LaunchPage>
-            <ProductCardGrid product_rows={similarProducts} />
+            <ProductCardGrid product_rows={products} />
           </>
         )}
       </main>

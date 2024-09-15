@@ -1,7 +1,7 @@
 import { v } from "convex/values";
 import { action, internalMutation, internalQuery } from "./_generated/server";
 import { internal } from "./_generated/api";
-import { ProductCardProps } from "@/app/components/ProductCard";
+import { ProductCardProps } from "@/app/_components/ProductCard";
 
 export async function embed(text: string): Promise<number[]> {
   const key = process.env.OPENAI_KEY;

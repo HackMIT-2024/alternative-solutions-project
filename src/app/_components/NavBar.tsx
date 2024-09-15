@@ -1,15 +1,19 @@
 "use client";
 
 import React from "react";
-import { MDBNavbar, MDBContainer, MDBNavbarBrand } from "mdb-react-ui-kit";
 import { UserButton, SignedOut, SignInButton, SignedIn } from "@clerk/nextjs";
-import styles from "../styles/NavBar.module.css";
-import WishlistButton from "./WishlistButton";
+import { MDBNavbar, MDBContainer, MDBNavbarBrand } from "mdb-react-ui-kit";
 
-const NavBar = ({ isLoading }) => {
+import WishlistButton from "./WishlistButton";
+import styles from "../_styles/NavBar.module.css";
+import { isUserLoaded } from "../_hooks/isUserLoaded";
+
+const NavBar = () => {
+  const isLoading = isUserLoaded();
+
   return (
     <div>
-      {isLoading && (
+      {!isLoading && (
         <MDBNavbar fixed="top" className={styles.navbar}>
           <MDBContainer fluid>
             <MDBNavbarBrand>

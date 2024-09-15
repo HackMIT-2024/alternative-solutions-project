@@ -1,12 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "../styles/SearchBar.module.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
 import { useAction } from "convex/react";
 import { api } from "../../../convex/_generated/api";
+
+import styles from "../_styles/SearchBar.module.css";
 
 library.add(faSearch);
 
@@ -24,7 +25,7 @@ const SearchBar = ({ setProducts, handleScroll }) => {
     const similarProducts = await findSimilarProducts({
       descriptionQuery: query,
     });
-        
+
     const similarProducts2d = [];
     const columns = 4;
     for (let i = 0; i < similarProducts.length; i += columns) {

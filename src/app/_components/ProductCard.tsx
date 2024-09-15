@@ -9,10 +9,11 @@ import {
   MDBBtn,
   MDBCardText,
 } from "mdb-react-ui-kit";
-import styles from "../styles/ProductCard.module.css";
-import { api } from "../../../convex/_generated/api";
 import { useAction, useQuery } from "convex/react";
 import { SignedIn, SignedOut } from "@clerk/clerk-react";
+import { api } from "../../../convex/_generated/api";
+
+import styles from "../_styles/ProductCard.module.css";
 
 export interface ProductCardProps {
   productId: string;
