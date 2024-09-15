@@ -1,6 +1,13 @@
-import { internalMutation, query, QueryCtx } from "./_generated/server";
+import {
+  action,
+  internalMutation,
+  internalQuery,
+  query,
+  QueryCtx,
+} from "./_generated/server";
 import { UserJSON } from "@clerk/backend";
 import { v, Validator } from "convex/values";
+import { internal } from "./_generated/api";
 
 export const current = query({
   args: {},
@@ -15,6 +22,7 @@ export const upsertFromClerk = internalMutation({
     const userAttributes = {
       name: `${data.first_name} ${data.last_name}`,
       isAdmin: false,
+      wishlist: [],
       externalId: data.id,
     };
 
@@ -62,3 +70,42 @@ async function userByExternalId(ctx: QueryCtx, externalId: string) {
     .withIndex("byExternalId", (q) => q.eq("externalId", externalId))
     .unique();
 }
+
+export const getWishList = internalQuery({
+  args: { userId: v.id("users") },
+  handler: async (ctx, { userId }) => {
+    return (
+      await ctx.db
+        .query("users")
+        .filter((q) => q.eq(q.field("_id"), userId))
+        .unique()
+    )?.wishlist;
+  },
+});
+
+export const updateWishlist = internalMutation({
+  args: {
+    userId: v.id("users"),
+    wishlist: v.array(v.id("products")),
+  },
+  handler: async (ctx, { userId, wishlist }) => {
+    await ctx.db.patch(userId, { wishlist: wishlist });
+  },
+});
+
+export const upsertWishlist = action({
+  args: {
+    userId: v.id("users"),
+    productId: v.id("products"),
+  },
+  handler: async (ctx, { userId, productId }) => {
+    let wishlist = await ctx.runQuery(internal.users.getWishList, { userId });
+
+    wishlist?.push(productId);
+
+    await ctx.runMutation(internal.users.updateWishlist, {
+      userId,
+      wishlist,
+    });
+  },
+});

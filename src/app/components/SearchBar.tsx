@@ -1,23 +1,36 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
-import styles from '../styles/SearchBar.module.css'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
+import React, { useState } from "react";
+import styles from "../styles/SearchBar.module.css";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons/faSearch";
+import { useAction } from "convex/react";
+import { api } from "../../../convex/_generated/api";
 
-library.add(faSearch)
+library.add(faSearch);
 
-const SearchBar = ({ handleSearch, handleScroll }) => {
+const SearchBar = ({ setProducts, handleScroll }) => {
+  const findSimilarProducts = useAction(api.products.similarProducts);
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    handleScroll();
     event.preventDefault();
-    handleSearch(query);
+    const similarProducts = await findSimilarProducts({
+      descriptionQuery: query,
+    });
+    const similarProducts2d = [];
+    const columns = 4;
+    for (let i = 0; i < similarProducts.length; i += columns) {
+      const chunk = similarProducts.slice(i, i + columns);
+      similarProducts2d.push(chunk);
+    }
+    setProducts(similarProducts2d);
   };
 
   return (
@@ -29,7 +42,7 @@ const SearchBar = ({ handleSearch, handleScroll }) => {
         placeholder="enter product keywords"
         className={styles.input}
       />
-      <button type="submit" className={styles.button} onClick={ handleScroll }>
+      <button type="submit" className={styles.button} onClick={handleSubmit}>
         <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
       </button>
     </form>
