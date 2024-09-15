@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Module.module.css'; 
+import styles from '../styles/Module.module.css'; 
 
 const LaunchTitle = () => {
     return (

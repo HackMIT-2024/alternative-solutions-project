@@ -1,7 +1,7 @@
 
 .h1 {
-    color: #1A2902;
-    font-size: 50px;
+    color: #AEC09A;
+    font-size: 53px;
     font-weight: bold;
     font-family: monospace;
     letter-spacing: 7px;
@@ -15,12 +15,12 @@
   .h1:hover span:nth-child(1) {
     margin-right: 15px;
   }
- 
-  .h1:hover span:nth-child(2) {
+
+  .h1:hover span:nth-child(1) {
     margin-left: 30px;
   }
   .h1:hover span {
-    color: #AEC09A;
-    text-shadow: 0 0 10px #AEC09A, 0 0 20px #AEC09A, 0 0 40px #AEC09A;
+    color: #1A2902;
+    text-shadow: 0 0 10px #1A2902, 0 0 20px #1A2902, 0 0 40px #1A2902;
   }
   

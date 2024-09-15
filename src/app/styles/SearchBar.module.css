@@ -1,15 +1,16 @@
-/* components/SearchBar.module.css */
+
 .form {
     display: flex;
     align-items: center;
     margin: 20px 0;
-    width: 100%; /* Full width */
-    max-width: 600px; /* Max width */
+    width: 100%;
+    max-width: 600px; 
     margin-left: auto;
-    margin-right: auto; /* Center horizontally */
+    margin-right: auto; 
   }
   
   .input {
+    background-color: #1A2902;
     padding: 1rem; 
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -20,9 +21,14 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .input:hover {
+  .input:hover,
+  .input:focus {
     border-color: white;
-    box-shadow: 0 0 5px rgba(0, 112, 243, 0.3);
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
+    outline:none
   }
   
   .button {
