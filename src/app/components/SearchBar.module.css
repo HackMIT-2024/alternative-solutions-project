@@ -10,18 +10,18 @@
   }
   
   .input {
-    padding: 1rem; /* Adjust padding for height */
+    padding: 1rem; 
     font-size: 1rem;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 7px;
     flex-grow: 1;
     width: 70vw; /* 70% of the viewport width */
     max-width: 400px; /* Maximum width */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .input:focus {
-    border-color: gray;
+  .input:hover {
+    border-color: white;
     box-shadow: 0 0 5px rgba(0, 112, 243, 0.3);
   }
   
