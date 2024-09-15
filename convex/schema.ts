@@ -14,7 +14,11 @@ const products = defineTable({
   description: v.string(),
   price: v.number(),
   rating: v.number(),
-  businessId: v.id("businesses")
+  businessId: v.id("businesses"),
+  embedding: v.array(v.float64()),
+}).vectorIndex("by_embedding", {
+  vectorField: "embedding",
+  dimensions: 1536,
 });
 
 const users = defineTable({
