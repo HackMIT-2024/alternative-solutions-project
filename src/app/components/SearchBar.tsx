@@ -24,6 +24,7 @@ const SearchBar = ({ setProducts, handleScroll }) => {
     const similarProducts = await findSimilarProducts({
       descriptionQuery: query,
     });
+        
     const similarProducts2d = [];
     const columns = 4;
     for (let i = 0; i < similarProducts.length; i += columns) {

@@ -38,6 +38,7 @@ export const fetchResults = internalQuery({
       }
 
       const product: ProductCardProps = {
+        productId: doc._id,
         imageSrc: doc.imageSrc,
         brand: doc.brand,
         url: doc.url,
