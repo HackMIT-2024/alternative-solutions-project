@@ -4,6 +4,8 @@ We are a user-friendly full-stack web application that allows for people aware a
 
 Visit us at https://shopsustain.com!
 
+Demo: https://youtu.be/A_mbcRLzURs?si=OhBc4j1Wa0K7TiPn
+
 ## Project Information
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
