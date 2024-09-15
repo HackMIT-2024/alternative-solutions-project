@@ -10,10 +10,14 @@
   grid-template-rows: 20px 1fr 20px;
   align-items: center;
   justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
+  /* min-height: 100svh; */
+  padding: 0px;
   gap: 64px;
   font-family: var(--font-geist-sans);
+  background-color: #1A2902;
+
+  position: relative;
+  min-height: 100vh;
   background-color: #1A2902;
 }
 
@@ -33,6 +37,17 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
+}
+
+.launchSection {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gridSection {
+  margin-top: 5em;
+  /* background-color: #fff; */
 }
 
 .main ol {

@@ -17,16 +17,10 @@ export default function Home() {
   const isLoading = isUserLoaded();
   const { isAdmin } = useQuery(api.users.current) || { isAdmin: false };
   const [products, setProducts] = useState<ProductCardRowProps[]>([]);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({
-        top: 1000,
-        behavior: "smooth",
-      });
-    }
-  };
+  setTimeout(() => {
+    document.getElementById('targetScroll')?.scrollIntoView({ behavior: 'smooth' });
+  }, 0);
 
   return (
     <div className={styles.page}>
@@ -41,11 +35,12 @@ export default function Home() {
                 <ProductForm />
               </>
             )}
-            <LaunchPage
-              setProducts={setProducts}
-              handleScroll={handleScroll}
-            ></LaunchPage>
-            <ProductCardGrid product_rows={products} />
+            <section className={styles.launchSection}>
+                <LaunchPage setProducts={setProducts} />
+            </section>
+            <section className={styles.gridSection} id="targetScroll">
+              <ProductCardGrid product_rows={products}/>
+            </section>
           </>
         )}
       </main>

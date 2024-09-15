@@ -9,7 +9,8 @@
     margin-right: auto; 
   }
   
-  .input {
+  .input {    
+    color: gray;
     background-color: #1A2902;
     padding: 1rem; 
     font-size: 1rem;
@@ -20,6 +21,10 @@
     max-width: 800px; /* Maximum width */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     color: #AEC09A
+  }
+
+  .input::placeholder{
+    color: gray
   }
   
   .input:hover,
@@ -35,12 +40,12 @@
   .button {
     padding: 1rem 2rem;
     font-size: 1rem;
-    border: 2px solid gray; /* Border to show button outline */
-    background-color: transparent; /* Initial background color */
-    color: gray; /* Text color matching the border */
+    border: 2px solid gray; 
+    background-color: transparent; 
+    color: gray; 
     border-radius: 4px;
     margin-left: 10px;
-    transition: background-color 0.3s ease, transform 0.4s ease-in-out; /* Combined transition */
+    transition: background-color 0.3s ease, transform 0.4s ease-in-out; 
   }
   
   /* On hover, fill in the button and expand it */
