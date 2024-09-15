@@ -7,16 +7,21 @@ const businesses = defineTable({
 });
 
 const products = defineTable({
-  description: v.string(),
   name: v.string(),
-  businessId: v.id("businesses"),
+  brand: v.string(),
+  imageSrc: v.string(),
   url: v.string(),
+  description: v.string(),
+  price: v.number(),
+  rating: v.number(),
+  businessId: v.id("businesses")
 });
 
 const users = defineTable({
   name: v.string(),
   // this the Clerk ID, stored in the subject JWT field
   externalId: v.string(),
+  isAdmin: v.boolean()
 }).index("byExternalId", ["externalId"]);
 
 export default defineSchema({
