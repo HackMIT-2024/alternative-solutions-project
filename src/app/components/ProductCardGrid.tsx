@@ -1,13 +1,17 @@
 import React from "react";
 import { MDBContainer } from "mdb-react-ui-kit";
-import ProductCardRow from "./ProductCardRow";
+import ProductCardRow, { ProductCardRowProps } from "./ProductCardRow";
 
-const ProductCardGrid: React.FC = () => {
+export interface ProductCardGridProps {
+  product_rows: ProductCardRowProps[]
+}
+
+const ProductCardGrid: React.FC<ProductCardGridProps> = ({ product_rows }) => {
   return (
     <MDBContainer fluid className="my-5">
-      <ProductCardRow />
-      <ProductCardRow />
-      <ProductCardRow />
+      {product_rows.map((row, index) => (
+          <ProductCardRow key={index} {...row} />
+      ))}
     </MDBContainer>
   );
 };
