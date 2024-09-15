@@ -1,8 +1,10 @@
 "use client";
 
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import ConvexClientProvider from "./ConvexClientProvider";
+import { MDBContainer } from "mdb-react-ui-kit";
+import NavBar from "./components/NavBar";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "./globals.css";
 
 const geistSans = localFont({
@@ -26,14 +28,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ConvexClientProvider>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+          <MDBContainer fluid>
+          <NavBar/>
+          </MDBContainer>
           {children}
         </ConvexClientProvider>
+
       </body>
     </html>
   );
