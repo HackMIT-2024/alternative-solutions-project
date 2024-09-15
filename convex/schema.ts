@@ -8,6 +8,7 @@ const businesses = defineTable({
 
 const products = defineTable({
   name: v.string(),
+  brand: v.string(),
   imageSrc: v.string(),
   url: v.string(),
   description: v.string(),
