@@ -11,6 +11,11 @@
   "dependencies": {
     "@clerk/clerk-react": "^5.8.2",
     "@clerk/nextjs": "^5.5.2",
+    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-regular-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "convex": "^1.16.0",
     "mdb-react-ui-kit": "^8.0.0",
     "next": "14.2.11",

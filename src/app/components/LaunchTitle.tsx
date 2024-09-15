@@ -4,7 +4,7 @@ import styles from '../styles/Module.module.css';
 const LaunchTitle = () => {
     return (
         <h1 className={styles.h1}>
-          <span>START YOUR </span>SUSTAIN<span>ABILITY JOURNEY</span>
+          <span>start your </span><span className={styles.sustain}>sustain</span><span>ability journey</span>
         </h1>
       );
 }
