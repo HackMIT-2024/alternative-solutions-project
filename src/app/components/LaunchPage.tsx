@@ -10,14 +10,14 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faPagelines, faCartShopping);
 
-const LaunchPage = ({ handleSearch }) => {
+const LaunchPage = ({ handleSearch, handleScroll }) => {
     return (
         <>
             <MDBRow style={{ marginTop: '20px' }}>
                 <MDBCol md='8'>
                     <LaunchTitle/>
                     <br />
-                    <SearchBar onSearch={handleSearch}/>
+                    <SearchBar handleSearch={ handleSearch } handleScroll={ handleScroll }/>
                 </MDBCol>
                 <MDBCol md='4'>
                     <FontAwesomeIcon 

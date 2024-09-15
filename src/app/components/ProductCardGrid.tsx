@@ -11,7 +11,7 @@ const ProductCardGrid: React.FC<ProductCardGridProps> = ({ product_rows }) => {
   return (
     <MDBContainer fluid className={`my-5 ${styles.container} ${styles.px_4} ${styles.px_lg_5} ${styles.mt_5}`}>
       {product_rows.map((row, index) => (
-          <ProductCardRow key={index} {...row} />
+          <ProductCardRow key={index} products={row} />
       ))}
     </MDBContainer>
   );
