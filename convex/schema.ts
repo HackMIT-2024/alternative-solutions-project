@@ -26,6 +26,7 @@ const users = defineTable({
   // this the Clerk ID, stored in the subject JWT field
   externalId: v.string(),
   isAdmin: v.boolean(),
+  wishlist: v.array(v.id("products")),
 }).index("byExternalId", ["externalId"]);
 
 export default defineSchema({
