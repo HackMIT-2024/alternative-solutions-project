@@ -19,7 +19,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Sustain.",
+  title: "sustain.",
   description: "Sustainable alternatives to everyday products.",
 };
 

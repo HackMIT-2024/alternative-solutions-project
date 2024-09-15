@@ -95,7 +95,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
                   <MDBCardText
                     className={`${styles.card_buttons_text} ms-1 text-center mb-0`}
                   >
-                    ITEM IN WISHLIST
+                    item in wishlist
                   </MDBCardText>
                 ) : (
                   <>
