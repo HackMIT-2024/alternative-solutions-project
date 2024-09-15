@@ -69,7 +69,7 @@ export const insertProduct = internalMutation({
   },
 });
 
-export const assignEmbeds = action({
+export const populateProduct = action({
   args: {
     name: v.string(),
     brand: v.string(),

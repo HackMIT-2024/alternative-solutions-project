@@ -1,35 +1,35 @@
-import React from 'react';
+import React from "react";
 import {
   MDBNavbar,
   MDBContainer,
   MDBNavbarBrand,
   MDBNavbarItem,
   MDBNavbarNav,
-  MDBCollapse
-} from 'mdb-react-ui-kit';
-import { UserButton, SignedOut, SignInButton, SignedIn } from '@clerk/nextjs';
-import './NavBar.module.css'
+  MDBCollapse,
+} from "mdb-react-ui-kit";
+import { UserButton, SignedOut, SignInButton, SignedIn } from "@clerk/nextjs";
+import "./NavBar.module.css";
 
-const NavBar = () => {
+const NavBar = (isLoading) => {
   return (
     <>
-      <MDBNavbar light bgColor='light'>
-      <MDBContainer fluid>
-          <MDBNavbarBrand>
-            Brand
-            </MDBNavbarBrand>
+      {isLoading && (
+        <MDBNavbar light bgColor="light">
+          <MDBContainer fluid>
+            <MDBNavbarBrand>Brand</MDBNavbarBrand>
             <MDBNavbarNav>
               <SignedOut>
-                <SignInButton/>
+                <SignInButton />
               </SignedOut>
               <SignedIn>
                 <UserButton />
               </SignedIn>
             </MDBNavbarNav>
-      </MDBContainer>
-      </MDBNavbar>
+          </MDBContainer>
+        </MDBNavbar>
+      )}
     </>
   );
-}
+};
 
 export default NavBar;

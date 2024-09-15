@@ -1,7 +1,9 @@
 /* components/SearchBar.module.css */
 .form {
   display: flex;
-  align-items: center;
+  flex: 1;
+  align-items: flex-start;
+  flex-wrap: wrap;
   margin: 20px 0;
   width: 100%; /* Full width */
   max-width: 600px; /* Max width */
@@ -14,8 +16,7 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 7px;
-  flex-grow: 1;
-  width: 70vw; /* 70% of the viewport width */
+  width: auto; /* 70% of the viewport width */
   max-width: 400px; /* Maximum width */
   transition:
     border-color 0.3s ease,
