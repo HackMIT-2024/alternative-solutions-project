@@ -8,7 +8,7 @@ import {
   MDBCollapse
 } from 'mdb-react-ui-kit';
 import { UserButton, SignedOut, SignInButton, SignedIn } from '@clerk/nextjs';
-import '../styles/NavBar.module.css'
+import styles from '../styles/NavBar.module.css'
 
 const NavBar = () => {
   return (
@@ -22,10 +22,10 @@ const NavBar = () => {
         />
       </MDBNavbarBrand>
             <SignedOut>
-            <SignInButton/>
+            <SignInButton><button className={styles.button}>sign in</button></SignInButton>
             </SignedOut>
             <SignedIn>
-            <UserButton/>
+            <div style={{ paddingTop: "10px", marginRight:"25px"}}><UserButton/></div>
             </SignedIn>
       </MDBContainer>
       </MDBNavbar>

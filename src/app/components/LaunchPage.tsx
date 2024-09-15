@@ -13,8 +13,7 @@ library.add(faPagelines, faCartShopping);
 const LaunchPage = ({ handleSearch }) => {
     return (
         <>
-            <MDBRow><br/></MDBRow>
-            <MDBRow>
+            <MDBRow style={{ marginTop: '20px' }}>
                 <MDBCol md='8'>
                     <LaunchTitle/>
                     <br />
@@ -24,12 +23,10 @@ const LaunchPage = ({ handleSearch }) => {
                     <FontAwesomeIcon 
                         icon={faPagelines} 
                         className={styles.bounceHover}
-                        style={{ color: "#1c2c04", fontSize: '300px', paddingLeft: '60px', paddingBottom:'25px'}}
-                    /> 
+                        style={{ color: "#1c2c04", fontSize: '300px', paddingLeft: '60px', paddingBottom:'25px'}}/> 
                     <FontAwesomeIcon 
                         icon={faCartShopping} 
-                        style={{ color: "#1c2c04", fontSize: '250px' }} 
-                    />
+                        style={{ color: "#1c2c04", fontSize: '250px' }} />
                 </MDBCol>
             </MDBRow>
         </>
