@@ -1,26 +1,25 @@
 import React from "react";
-import {
-  MDBRow,
-  MDBCol,
-  MDBContainer
-} from "mdb-react-ui-kit";
+import { MDBRow, MDBCol } from "mdb-react-ui-kit";
 import ProductCard, { ProductCardProps } from "./ProductCard";
 
 export interface ProductCardRowProps {
-  products: ProductCardProps[]
+  products: ProductCardProps[];
 }
 
 const ProductCardRow: React.FC<ProductCardRowProps> = ({ products }) => {
+  console.log(products);
   return (
-    <MDBContainer fluid className="my-5">
-      <MDBRow className="product-card-grid">
-        {products.map((product, index) => (
+    <MDBRow>
+      {products.length ? (
+        products.map((product, index) => (
           <MDBCol key={index} md="6" lg="3" className="mb-4 mb-lg-0">
             <ProductCard {...product} />
           </MDBCol>
-        ))}
-      </MDBRow>
-    </MDBContainer>
+        ))
+      ) : (
+        <></>
+      )}
+    </MDBRow>
   );
 };
 
