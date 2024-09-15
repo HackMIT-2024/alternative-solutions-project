@@ -91,9 +91,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
               ) : (
                 <>
                   <SignedIn>
-                    <MDBBtn
+                    <MDBBtn outline
                       size="sm"
-                      color="primary"
+                      color="secondary"
                       rippleColor="dark"
                       className={`${styles.card_buttons} ms-1`}
                       onClick={handleWishlist}
@@ -115,7 +115,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               )}
 
               <MDBBtn
-                color="secondary"
+                color="light"
                 className={`${styles.card_buttons} ms-2`}
                 href={url}
                 target="_blank"

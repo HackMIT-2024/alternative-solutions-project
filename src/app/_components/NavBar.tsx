@@ -17,11 +17,13 @@ const NavBar = () => {
         <MDBNavbar fixed="top" className={styles.navbar}>
           <MDBContainer fluid>
             <MDBNavbarBrand>
+              <a href="/">
               <img
                 src="https://images.vexels.com/media/users/3/156366/isolated/preview/cc1af2a2f074c755f73ee84b02af65fc-simple-leaves-icon-image.png"
                 height="60"
                 alt="Logo"
               />
+              </a>
             </MDBNavbarBrand>
             <SignedOut>
               <SignInButton>

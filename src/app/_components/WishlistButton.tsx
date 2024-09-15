@@ -14,7 +14,7 @@ const WishlistButton = () => {
 
   return (
     <a href="">
-      <FontAwesomeIcon size="2x" icon={wishlistIcon} />
+      <FontAwesomeIcon size="2x" icon={wishlistIcon} color="#AEC09A" />
     </a>
   );
 };

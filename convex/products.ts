@@ -53,6 +53,13 @@ export const fetchResults = internalQuery({
   },
 });
 
+export const fetchProductsFromWishlist = action({
+  args: { wishlist: v.array(v.id('products')) },
+  handler: async (ctx, args): Promise<Array<ProductCardProps>> => {
+    return await ctx.runQuery(internal.products.fetchResults, {ids: args.wishlist});
+  }
+});
+
 export const insertProduct = internalMutation({
   args: {
     name: v.string(),
@@ -110,7 +117,7 @@ export const similarProducts = action({
     });
     // ...
     const products: Array<ProductCardProps> = await ctx.runQuery(
-      internal.products.fetchResults,
+    internal.products.fetchResults,
       { ids: results.map((result) => result._id) }
     );
     return products;
