@@ -1,9 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import styles from "./SearchBar.module.css";
+import React, { useState, useRef } from 'react';
+import styles from '../styles/SearchBar.module.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
 
-const SearchBar = ({ onSearch }) => {
+library.add(faSearch)
+
+const SearchBar = ({ handleSearch, handleScroll }) => {
   const [query, setQuery] = useState("");
 
   const handleChange = (event) => {
@@ -12,7 +17,7 @@ const SearchBar = ({ onSearch }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSearch(query);
+    handleSearch(query);
   };
 
   return (
@@ -21,11 +26,11 @@ const SearchBar = ({ onSearch }) => {
         type="text"
         value={query}
         onChange={handleChange}
-        placeholder="Enter product keywords"
+        placeholder="enter product keywords"
         className={styles.input}
       />
-      <button type="submit" className={styles.button}>
-        Go
+      <button type="submit" className={styles.button} onClick={ handleScroll }>
+        <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
       </button>
     </form>
   );

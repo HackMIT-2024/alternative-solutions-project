@@ -1,0 +1,16 @@
+.button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid gray; 
+    background-color: transparent;
+    color: gray; 
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #AEC09A; 
+    color: #344C11; 
+  }

@@ -1,0 +1,53 @@
+
+.form {
+    display: flex;
+    align-items: left;
+    margin: 20px 0;
+    margin-left: 60px;
+    width: 100%;
+    max-width: 700px; 
+    margin-right: auto; 
+  }
+  
+  .input {
+    background-color: #1A2902;
+    padding: 1rem; 
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    flex-grow: 1;
+    width: 300vw; /* 70% of the viewport width */
+    max-width: 800px; /* Maximum width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input:hover,
+  .input:focus {
+    border-color: white;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #575756;
+    border-radius: 0;
+    background-position: 100% center;
+    outline:none
+  }
+  
+  .button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border: 2px solid gray; /* Border to show button outline */
+    background-color: transparent; /* Initial background color */
+    color: gray; /* Text color matching the border */
+    border-radius: 4px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.4s ease-in-out; /* Combined transition */
+  }
+  
+  /* On hover, fill in the button and expand it */
+  .button:hover {
+    background-color: #AEC09A; 
+    color: #344C11; 
+    cursor: pointer;
+    transform: scale(1.1); 
+  }
+  
+  

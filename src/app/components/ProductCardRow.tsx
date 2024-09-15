@@ -1,6 +1,10 @@
 import React from "react";
-import { MDBRow, MDBCol } from "mdb-react-ui-kit";
+import {
+  MDBRow,
+  MDBCol,
+} from "mdb-react-ui-kit";
 import ProductCard, { ProductCardProps } from "./ProductCard";
+import styles from '../styles/ProductCard.module.css';
 
 export interface ProductCardRowProps {
   products: ProductCardProps[];
@@ -9,8 +13,8 @@ export interface ProductCardRowProps {
 const ProductCardRow: React.FC<ProductCardRowProps> = ({ products }) => {
   console.log(products);
   return (
-    <MDBRow>
-      {products.length ? (
+    <MDBRow className={`product-card-grid ${styles.row} ${styles.gx_4} ${styles.gx_lg_5} ${styles.row_cols_2} ${styles.row_cols_md_3} ${styles.row_cols_xl_4} ${styles.justify_content_center}`}>
+    {(products && products.length) ? (
         products.map((product, index) => (
           <MDBCol key={index} md="6" lg="3" className="mb-4 mb-lg-0">
             <ProductCard {...product} />
@@ -22,48 +26,5 @@ const ProductCardRow: React.FC<ProductCardRowProps> = ({ products }) => {
     </MDBRow>
   );
 };
-
-/*
-        <MDBRow>
-            <MDBCol md="6" lg="3" className="mb-4 mb-lg-0">
-              <ProductCard imageSrc="https://m.media-amazon.com/images/I/61kgG2hAusL._AC_UF894,1000_QL80_.jpg"
-                          brand="Brand 1"
-                          url="https://www.amazon.com/Kettle-Stovetop-Whistling-Teakettle-Stainless/dp/B07DFF5WPQ"
-                          description="Tea Kettle Stovetop Whistling Teakettle ClassicTeapot Stainless Steel Tea Pots for Stove Top with Heat-resistant Folding Handle Mirror Finish, 2 liters"
-                          price={32.99}
-                          rating={4.3}
-              />
-            </MDBCol>
-            <MDBCol md="6" lg="3" className="mb-4 mb-lg-0">
-              <ProductCard imageSrc="https://m.media-amazon.com/images/I/61kgG2hAusL._AC_UF894,1000_QL80_.jpg"
-                          brand="Brand 2"
-                          url="https://www.amazon.com/Kettle-Stovetop-Whistling-Teakettle-Stainless/dp/B07DFF5WPQ"
-                          description="Tea Kettle Stovetop Whistling Teakettle ClassicTeapot Stainless Steel Tea Pots for Stove Top with Heat-resistant Folding Handle Mirror Finish, 2 liters"
-                          price={32.99}
-                          rating={4.3}
-              />
-            </MDBCol>
-            <MDBCol md="6" lg="3" className="mb-4 mb-lg-0">
-              <ProductCard imageSrc="https://m.media-amazon.com/images/I/61kgG2hAusL._AC_UF894,1000_QL80_.jpg"
-                          brand="Brand 3"
-                          url="https://www.amazon.com/Kettle-Stovetop-Whistling-Teakettle-Stainless/dp/B07DFF5WPQ"
-                          description="Tea Kettle Stovetop Whistling Teakettle ClassicTeapot Stainless Steel Tea Pots for Stove Top with Heat-resistant Folding Handle Mirror Finish, 2 liters"
-                          price={32.99}
-                          rating={4.3}
-              />
-            </MDBCol>
-            <MDBCol md="6" lg="3" className="mb-4 mb-lg-0">
-              <ProductCard imageSrc="https://m.media-amazon.com/images/I/61kgG2hAusL._AC_UF894,1000_QL80_.jpg"
-                          brand="Brand 4"
-                          url="https://www.amazon.com/Kettle-Stovetop-Whistling-Teakettle-Stainless/dp/B07DFF5WPQ"
-                          description="Tea Kettle Stovetop Whistling Teakettle ClassicTeapot Stainless Steel Tea Pots for Stove Top with Heat-resistant Folding Handle Mirror Finish, 2 liters"
-                          price={32.99}
-                          rating={4.3}
-              />
-            </MDBCol>
-        </MDBRow>
-  );
-};
-*/
 
 export default ProductCardRow;

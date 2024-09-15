@@ -14,7 +14,7 @@
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
-  background-color: #AEC09A;
+  background-color: #1A2902;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -163,20 +163,4 @@ a.secondary {
   .logo {
     filter: invert();
   }
-}
-
-.product-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.product-card-image {
-  object-fit: cover;
-}
-
-.product-card-body {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
 }
