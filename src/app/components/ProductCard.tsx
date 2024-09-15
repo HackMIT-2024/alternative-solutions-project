@@ -8,7 +8,7 @@ import {
   MDBCardImage,
   MDBBtn,
 } from "mdb-react-ui-kit";
-
+import styles from '../styles/ProductCard.module.css';
 
 export interface ProductCardProps {
     imageSrc: string;
@@ -28,25 +28,23 @@ const ProductCard: React.FC<ProductCardProps> = ({
     rating,
 }) => {
   return (
-    <MDBCard className="product-card d-flex flex-column col mb-4">
-        <div className="border border-5 border-white card h-100">
+    <MDBCard className={`${styles.product_card} d-flex flex-column ${styles.col} ${styles.mb_4}`}>
+        <div className={`border border-5 border-white ${styles.card} ${styles.h_100}`}>
         
         <MDBCardImage
             src={imageSrc}
             position="top"
             alt={description}
-            className="product-card-image"
+            className={ styles.product_card_image }
         />
-        <MDBCardBody className="product-card-body card-body flex-grow-1 d-flex flex-column p-4">
+        <MDBCardBody className={`flex-grow-1 d-flex flex-column ${styles.p_4} `}>
             <div className="d-flex justify-content-between">
-            <p className="small text-muted">
-                {brand}
-            </p>
+            <p className="small text-muted">{brand}</p>
             </div>
 
             <div className="d-flex justify-content-between mb-3">
-            <h5 className="align-left mb-0 text-dark">{description}</h5>
-            <div className="align-right">
+            <h5 className={`${styles.align_left} mb-0 text-dark ${styles.four_lines}`}>{description}</h5>
+            <div className={`${styles.align_right}`}>
                 <h5 className="text-dark mb-0">${price}</h5>
                 <h6 className="text-muted mb-0 small">{rating}/5 stars</h6>
             </div>

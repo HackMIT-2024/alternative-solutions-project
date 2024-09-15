@@ -38,7 +38,7 @@ export default function Home() {
       imageSrc: "https://www.shopetee.com/cdn/shop/files/7fc189732e042c02531ad8ba7f6145bf_1100x.jpg?v=1713195317",
       brand: "Etee",
       url: "https://www.shopetee.com/collections/hand-soap/products/foaming-hand-soap-concentrate",
-      description: "Lavender Lime Foaming Hand Soap Concentrate",
+      description: "Lavender Lime Foaming Hand Soap Concentrate with additional words to make the line longer just in case",
       price: "16.80",
       rating: "4.5"
     }

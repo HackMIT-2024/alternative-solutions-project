@@ -4,6 +4,7 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import ProductCard, { ProductCardProps } from "./ProductCard";
+import styles from '../styles/ProductCard.module.css';
 
 export interface ProductCardRowProps {
   products: ProductCardProps[]
@@ -11,7 +12,7 @@ export interface ProductCardRowProps {
 
 const ProductCardRow: React.FC<ProductCardRowProps> = ({ products }) => {
   return (
-    <MDBRow className="product-card-grid row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <MDBRow className={`product-card-grid ${styles.row} ${styles.gx_4} ${styles.gx_lg_5} ${styles.row_cols_2} ${styles.row_cols_md_3} ${styles.row_cols_xl_4} ${styles.justify_content_center}`}>
       {products.map((product, index) => (
         <MDBCol key={index} md="6" lg="3" className="mb-4 mb-lg-0 col">
           <ProductCard {...product} />
