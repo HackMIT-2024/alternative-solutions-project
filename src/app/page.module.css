@@ -169,6 +169,7 @@ a.secondary {
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 1rem;
 }
 
 .product-card-image {
@@ -177,6 +178,22 @@ a.secondary {
 
 .product-card-body {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.align-left {
+  align-items: left;
+}
+
+.align-right {
+  align-items: right;
+}
+
+.row-equal-height {
+  display: flex;
+}
+.row-equal-height > .col {
   display: flex;
   flex-direction: column;
 }

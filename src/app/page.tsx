@@ -12,36 +12,36 @@ export default function Home() {
   };
   const products = [
     {
-      imageSrc: "https://m.media-amazon.com/images/I/61kgG2hAusL._AC_UF894,1000_QL80_.jpg",
-      brand: "Brand 1",
-      url: "https://www.amazon.com/Kettle-Stovetop-Whistling-Teakettle-Stainless/dp/B07DFF5WPQ",
-      description: "Tea Kettle Stovetop Whistling Teakettle ClassicTeapot Stainless Steel Tea Pots for Stove Top with Heat-resistant Folding Handle Mirror Finish, 2 liters",
-      price: 32.99,
-      rating: 4.3
+      imageSrc: "https://images.grove.co/upload/f_auto,fl_progressive,ar_1:1,c_pad,b_white,dpr_auto,w_1300/v1638797905/afsekia8yhl4bijhlzmh.jpg",
+      brand: "Grove",
+      url: "https://www.grove.co/catalog/product/organic-pump-soap/?v=788&attrpg=catalog&attrsrc=22&attrpos=2",
+      description: "Organic Sugar Soap",
+      price: "11.99",
+      rating: "4.6"
     },
     {
-      imageSrc: "https://m.media-amazon.com/images/I/81eFW5hz6cL._AC_UL640_FMwebp_QL65_.jpg",
-      brand: "Brand 2",
-      url: "https://www.amazon.com/sspa/click?ie=UTF8&spc=MTo2OTIyNTAwMzc4NjIyNTE6MTcyNjM2MTIzMDpzcF9hdGY6MzAwMDk1MDUwMjg2OTAyOjowOjo&url=%2FCOMFEE-Electric-Cordless-Indicator-Protection%2Fdp%2FB0BCK48DXY%2Fref%3Dsr_1_3_sspa%3Fcrid%3D3DKBUNA6QASG9%26dib%3DeyJ2IjoiMSJ9.o51Mm0hvjCXRcaQuTUziaauUoZ8QFcThrjeYC1xUn1-pOROtHfeZlBTruGBX_H72PoPq-l6oiOWM59dXTPeczbqSGgsq5Tiic6TeFo1gtO0mwK5JFiSNCqJXPuf1tntjyi36BnFr6K7HWMvUnyrru9EKbR4AczFiumdul5AO79OQ8a_3WJ3an77qU5cEO-7l1V1AJYHbru5hSg-VG_oQN7-Rllc7dWu-tFJ2ELOurNuZNEBykPzfAn8dy_lgaEWXkXXN-L0QsF_HUfv7uliHXLWWplXUo6z-OT6p5gLbQ80.C3js6UMA6o-DH_oViwOkyhnST1B31q391e9pn5xCfaE%26dib_tag%3Dse%26keywords%3Dkettle%26qid%3D1726361230%26s%3Dhome-garden%26sprefix%3Dkettl%252Cgarden%252C122%26sr%3D1-3-spons%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1",
-      description: "Description 2",
-      price: 32.99,
-      rating: 4.3
+      imageSrc: "https://earthhero.com/cdn/shop/products/Meliora-FoamingHandSoapTablet-Lavender-1.jpg?v=1694186839&width=810",
+      brand: "Earth Hero",
+      url: "https://earthhero.com/collections/all/products/foaming-hand-soap-tablets?selling_plan=5133664492",
+      description: "Foaming Hand Soap Tablets",
+      price: "9.34",
+      rating: "4.9"
     },
     {
-      imageSrc: "https://m.media-amazon.com/images/I/61kgG2hAusL._AC_UF894,1000_QL80_.jpg",
-      brand: "Brand 3",
-      url: "https://www.amazon.com/Kettle-Stovetop-Whistling-Teakettle-Stainless/dp/B07DFF5WPQ",
-      description: "Description 3",
-      price: 32.99,
-      rating: 4.3
+      imageSrc: "https://images.grove.co/upload/f_auto,fl_progressive,ar_1:1,c_pad,b_white,dpr_auto,w_1300/v1695319656/lgmmywi3rfnfekxublso.jpg",
+      brand: "Grove",
+      url: "https://www.grove.co/catalog/product/mrs-meyers-hand-soap/?v=3579&attrpg=catalog&attrsrc=22&attrpos=5",
+      description: "Hand Soap",
+      price: "4.99",
+      rating: "4.6"
     },
     {
-      imageSrc: "https://m.media-amazon.com/images/I/61kgG2hAusL._AC_UF894,1000_QL80_.jpg",
-      brand: "Brand 4",
-      url: "https://www.amazon.com/Kettle-Stovetop-Whistling-Teakettle-Stainless/dp/B07DFF5WPQ",
-      description: "Description 4",
-      price: 32.99,
-      rating: 4.3
+      imageSrc: "https://www.shopetee.com/cdn/shop/files/7fc189732e042c02531ad8ba7f6145bf_1100x.jpg?v=1713195317",
+      brand: "Etee",
+      url: "https://www.shopetee.com/collections/hand-soap/products/foaming-hand-soap-concentrate",
+      description: "Lavender Lime Foaming Hand Soap Concentrate",
+      price: "16.80",
+      rating: "4.5"
     }
   ];
 
