@@ -5,6 +5,7 @@ We are a user-friendly full-stack web application that allows for people aware a
 Visit us at [https://sustain-ten.vercel.app/](https://sustain-ten.vercel.app/)!
 
 Demo: https://youtu.be/A_mbcRLzURs?si=OhBc4j1Wa0K7TiPn
+More Info: https://ballot.hackmit.org/project/dxail-gomai-tgzwf-bscth
 
 ## Project Information
 
